@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import THEOplayerSDK
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

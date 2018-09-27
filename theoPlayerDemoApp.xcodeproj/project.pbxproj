@@ -15,6 +15,8 @@
 		806D2686215D35BA0034C2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806D2684215D35BA0034C2CE /* LaunchScreen.storyboard */; };
 		806D2691215D35BA0034C2CE /* theoPlayerDemoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D2690215D35BA0034C2CE /* theoPlayerDemoAppTests.swift */; };
 		806D269C215D35BA0034C2CE /* theoPlayerDemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D269B215D35BA0034C2CE /* theoPlayerDemoAppUITests.swift */; };
+		806D26AA215D36760034C2CE /* THEOplayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806D26A9215D36760034C2CE /* THEOplayerSDK.framework */; };
+		806D26AB215D36760034C2CE /* THEOplayerSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 806D26A9215D36760034C2CE /* THEOplayerSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		806D26AC215D36760034C2CE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				806D26AB215D36760034C2CE /* THEOplayerSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		806D2675215D35B80034C2CE /* theoPlayerDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theoPlayerDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806D2678215D35B80034C2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +65,7 @@
 		806D2697215D35BA0034C2CE /* theoPlayerDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = theoPlayerDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		806D269B215D35BA0034C2CE /* theoPlayerDemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = theoPlayerDemoAppUITests.swift; sourceTree = "<group>"; };
 		806D269D215D35BA0034C2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		806D26A9215D36760034C2CE /* THEOplayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = THEOplayerSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806D26AA215D36760034C2CE /* THEOplayerSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +97,7 @@
 		806D266C215D35B80034C2CE = {
 			isa = PBXGroup;
 			children = (
+				806D26A9215D36760034C2CE /* THEOplayerSDK.framework */,
 				806D2677215D35B80034C2CE /* theoPlayerDemoApp */,
 				806D268F215D35BA0034C2CE /* theoPlayerDemoAppTests */,
 				806D269A215D35BA0034C2CE /* theoPlayerDemoAppUITests */,
@@ -138,6 +157,7 @@
 				806D2671215D35B80034C2CE /* Sources */,
 				806D2672215D35B80034C2CE /* Frameworks */,
 				806D2673215D35B80034C2CE /* Resources */,
+				806D26AC215D36760034C2CE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -438,7 +458,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HBT9FH8X6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = theoPlayerDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,7 +481,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HBT9FH8X6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = theoPlayerDemoApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
