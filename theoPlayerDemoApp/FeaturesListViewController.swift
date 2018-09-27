@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
+//  FeaturesListViewController.swift
 //  theoPlayerDemoApp
 //
 //  Created by Med on 9/27/18.
 //  Copyright © 2018 Med Abida. All rights reserved.
 //
-
+//featuresListVC
 import UIKit
-import THEOplayerSDK
-class ViewController: UIViewController {
+
+class FeaturesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
