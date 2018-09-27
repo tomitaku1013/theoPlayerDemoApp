@@ -1,0 +1,36 @@
+[{
+		"title": "video1",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video2",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video3",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video4",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video5",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video6",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	},
+	{
+		"title": "video7",
+		"path": "__FULL_PATH__",
+		"duration": "3600"
+	}
+]

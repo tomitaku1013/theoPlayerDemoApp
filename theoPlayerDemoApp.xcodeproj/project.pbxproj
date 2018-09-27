@@ -20,6 +20,7 @@
 		806D26AE215D6C3F0034C2CE /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26AD215D6C3F0034C2CE /* extensions.swift */; };
 		806D26B0215D785B0034C2CE /* VideosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26AF215D785B0034C2CE /* VideosListViewController.swift */; };
 		806D26B2215D786F0034C2CE /* FeaturesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */; };
+		806D26B5215D8B090034C2CE /* videos_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 806D26B4215D8B090034C2CE /* videos_list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		806D26AD215D6C3F0034C2CE /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		806D26AF215D785B0034C2CE /* VideosListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosListViewController.swift; sourceTree = "<group>"; };
 		806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesListViewController.swift; sourceTree = "<group>"; };
+		806D26B4215D8B090034C2CE /* videos_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videos_list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,15 +127,14 @@
 			isa = PBXGroup;
 			children = (
 				806D2678215D35B80034C2CE /* AppDelegate.swift */,
-				806D267A215D35B80034C2CE /* PageViewController.swift */,
-				806D26AF215D785B0034C2CE /* VideosListViewController.swift */,
-				806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */,
+				806D26B3215D838E0034C2CE /* ViewControllers */,
 				806D26AD215D6C3F0034C2CE /* extensions.swift */,
 				806D267C215D35B80034C2CE /* Main.storyboard */,
 				806D2682215D35BA0034C2CE /* Assets.xcassets */,
 				806D2684215D35BA0034C2CE /* LaunchScreen.storyboard */,
 				806D2687215D35BA0034C2CE /* Info.plist */,
 				806D267F215D35B80034C2CE /* theoPlayerDemoApp.xcdatamodeld */,
+				806D26B6215D8B0F0034C2CE /* Datasets */,
 			);
 			path = theoPlayerDemoApp;
 			sourceTree = "<group>";
@@ -154,6 +155,24 @@
 				806D269D215D35BA0034C2CE /* Info.plist */,
 			);
 			path = theoPlayerDemoAppUITests;
+			sourceTree = "<group>";
+		};
+		806D26B3215D838E0034C2CE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				806D267A215D35B80034C2CE /* PageViewController.swift */,
+				806D26AF215D785B0034C2CE /* VideosListViewController.swift */,
+				806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		806D26B6215D8B0F0034C2CE /* Datasets */ = {
+			isa = PBXGroup;
+			children = (
+				806D26B4215D8B090034C2CE /* videos_list.json */,
+			);
+			path = Datasets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				806D2686215D35BA0034C2CE /* LaunchScreen.storyboard in Resources */,
+				806D26B5215D8B090034C2CE /* videos_list.json in Resources */,
 				806D2683215D35BA0034C2CE /* Assets.xcassets in Resources */,
 				806D267E215D35B80034C2CE /* Main.storyboard in Resources */,
 			);
