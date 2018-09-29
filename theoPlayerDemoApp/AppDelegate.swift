@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import THEOplayerSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,9 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.flatColor.navyBlue.accent1
         UISegmentedControl.appearance().backgroundColor = UIColor.flatColor.navyBlue.accent2
         
+        
         return true
     }
 
+    
+    // enable screenRotation for views That Conform to the RotatableViewController
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if let rootViewController = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController) {
+            if rootViewController.isKind(of: RotationLockedPageViewController.self){
+                // allow portrait only orientation
+                return .portrait
+            }
+        }
+        // allow all oriontations
+        return .allButUpsideDown
+    }
+    
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -94,6 +110,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    
+    
+    private func topViewControllerWithRootViewController(rootViewController: UIViewController!) -> UIViewController? {
+        guard rootViewController != nil else { return nil }
+        
+        guard !(rootViewController.isKind(of: (UITabBarController).self)) else{
+            return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UITabBarController).selectedViewController)
+        }
+        guard !(rootViewController.isKind(of:(UINavigationController).self)) else{
+            return topViewControllerWithRootViewController(rootViewController: (rootViewController as! UINavigationController).visibleViewController)
+        }
+        guard !(rootViewController.presentedViewController != nil) else{
+            return topViewControllerWithRootViewController(rootViewController: rootViewController.presentedViewController)
+        }
+        return rootViewController
+    }
+    
 
 }
 

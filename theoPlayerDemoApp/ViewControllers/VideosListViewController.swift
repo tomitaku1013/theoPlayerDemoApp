@@ -10,6 +10,7 @@ import UIKit
 
 class VideosListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     // load tableview dataset
     lazy var tableViewDataSet: [videoListItem] = {
         return loadVideosDataSet()
@@ -40,8 +41,8 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = tableViewDataSet[indexPath.row]
-        print(data.title)
         let cell = tableView.dequeueReusableCell(withIdentifier: "tCell")! as UITableViewCell
+        cell.textLabel?.text = data.title
         return cell
     }
     
@@ -51,7 +52,12 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
     
     
     //MARK - UITableViewDelegate
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "playerVC") as! PlayerViewController
+        vc.modalPresentationStyle = .overFullScreen
+        vc.videoItem = tableViewDataSet[indexPath.row]
+        self.present(vc, animated: true)
+    }
     
     
     
@@ -84,6 +90,7 @@ extension VideosListViewController {
                             print("error in parsing data from Json File videos_list")
                             return dataset
                         }
+                        
                         let videoItem = videoListItem(title: title, path: path, duration: duration)
                         dataset.append(videoItem)
                     }
@@ -103,14 +110,4 @@ extension VideosListViewController {
 }
 
 
-// Class Models
-class videoListItem {
-    var title: String!
-    var path: String!
-    var duration: Int!
-    init(title:String, path:String, duration:String){
-        self.title = title
-        self.path = path
-        self.duration = Int(duration) ?? 0
-    }
-}
+

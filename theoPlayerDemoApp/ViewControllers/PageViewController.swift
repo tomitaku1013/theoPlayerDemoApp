@@ -7,8 +7,8 @@
 //
 
 import UIKit
-class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-
+class PageViewController: RotationLockedPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    
     // declaring viewController that will be used in the pageViewController
     lazy var subViewControllers: [UIViewController] = {
         return [
@@ -71,12 +71,14 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate, UI
         return subViewControllers[VcIndex + 1]
     }
     
+    
+    
     //MARK - UIPageViewControllerDelegate
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         let VcIndex: Int = subViewControllers.lastIndex(of: pendingViewControllers[0]) ?? 0
         segmentedControl.selectedSegmentIndex = VcIndex
     }
-
+    
 }
 
 
