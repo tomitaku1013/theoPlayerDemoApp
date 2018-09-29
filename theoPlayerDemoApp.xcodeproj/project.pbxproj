@@ -24,6 +24,7 @@
 		806D26B8215D94CD0034C2CE /* ClassModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26B7215D94CD0034C2CE /* ClassModels.swift */; };
 		80B145E7215F8DE800397FF9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B145E6215F8DE800397FF9 /* PlayerViewController.swift */; };
 		80B145E9215F90E700397FF9 /* RotationLockedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B145E8215F90E700397FF9 /* RotationLockedPageViewController.swift */; };
+		80B50A12215FF3A8009E5D4B /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B50A11215FF3A8009E5D4B /* VideoInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		806D26B7215D94CD0034C2CE /* ClassModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModels.swift; sourceTree = "<group>"; };
 		80B145E6215F8DE800397FF9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		80B145E8215F90E700397FF9 /* RotationLockedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationLockedPageViewController.swift; sourceTree = "<group>"; };
+		80B50A11215FF3A8009E5D4B /* VideoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				806D26AF215D785B0034C2CE /* VideosListViewController.swift */,
 				806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */,
 				80B145E6215F8DE800397FF9 /* PlayerViewController.swift */,
+				80B50A11215FF3A8009E5D4B /* VideoInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				806D26B2215D786F0034C2CE /* FeaturesListViewController.swift in Sources */,
 				806D26B8215D94CD0034C2CE /* ClassModels.swift in Sources */,
 				806D26AE215D6C3F0034C2CE /* extensions.swift in Sources */,
+				80B50A12215FF3A8009E5D4B /* VideoInfoViewController.swift in Sources */,
 				80B145E9215F90E700397FF9 /* RotationLockedPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

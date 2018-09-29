@@ -7,10 +7,15 @@
 		"title": "HLS stream with multiple subtitles and audio tracks",
 		"path": "https://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8",
 		"duration": "3600"
-	},
-	{
-		"title": "HLS stream with 360/VR",
-		"path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8",
-		"duration": "3600"
+    },
+    {
+        "title": "HLS stream with 360/VR",
+        "path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8",
+        "duration": "3600"
+    },
+    {
+        "title": "Tik Tok with subtitles",
+        "path": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8",
+        "duration": "3600"
     }
 ]

@@ -56,9 +56,12 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "playerVC") as! PlayerViewController
         vc.modalPresentationStyle = .overFullScreen
         vc.videoItem = tableViewDataSet[indexPath.row]
-        self.present(vc, animated: true)
+        self.present(vc, animated: true) {
+            // deselect row automatically
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
     }
-    
     
     
     
