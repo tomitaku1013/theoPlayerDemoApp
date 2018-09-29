@@ -47,10 +47,6 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     
-    
-    
-    
-    
     //MARK - UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "playerVC") as! PlayerViewController

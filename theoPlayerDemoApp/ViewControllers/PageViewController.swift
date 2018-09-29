@@ -27,8 +27,6 @@ class PageViewController: RotationLockedPageViewController, UIPageViewController
     // UI elements
     var segmentedControl: UISegmentedControl!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
