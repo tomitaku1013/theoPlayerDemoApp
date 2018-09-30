@@ -3,7 +3,8 @@
 
 [![Swift Version][swift-image]][swift-url]
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
-this is a demo application to illustrate the integration of some main functionalities of TheoPlayer SDK and can be used as a reference implementation to help developers integrate the THEOplayer SDKs in their own projects.
+
+This is a demo application to illustrate the integration of some main functionalities of TheoPlayer SDK and can be used as a reference implementation to help developers integrate the THEOplayer SDKs in their own projects.
 
 ## Features
 
