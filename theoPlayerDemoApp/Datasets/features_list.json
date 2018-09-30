@@ -1,25 +1,29 @@
 [{
-		"title": "HLS stream",
+		"title": "Stream with subtitles",
 		"path": "https://cdn.theoplayer.com/video/sintel/index.m3u8"
 	},
 	{
-		"title": "HLS stream with multiple subtitles and audio tracks",
+		"title": "Stream with multiple audio tracks",
 		"path": "https://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8"
     },
     {
-        "title": "HLS stream with 360/VR",
+        "title": "Stream with picture-in-picture feature enabled",
         "path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8"
     },
     {
-        "title": "Tik Tok with subtitles",
+        "title": "Stream with 360/VR feature enabled",
         "path": "https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_ts/master.m3u8"
     },
     {
-        "title": "sintel HLS test",
+        "title": "Stream with a poster image",
         "path": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
     },
     {
-        "title": "telequebec.tv",
+        "title": "Stream with a pre-roll advertisement",
+        "path": "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8"
+    },
+    {
+        "title": "Stream with a skippable advertisement",
         "path": "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8"
     }
 ]

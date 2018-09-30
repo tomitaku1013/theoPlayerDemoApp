@@ -14,16 +14,15 @@ class videoListItem {
     var title: String!
     var path: String!
     var mimeType: String!
-    var duration: Int!
-    init(title:String, path:String, duration:String){
+    var posterURL: URL?
+    init(title:String, path:String, posterURL: String = String()){
         self.title = title
         self.path = path
-        self.duration = Int(duration) ?? 0
         self.mimeType = mimeTypeFromPath(path: self.path)
-        
-        
+        if let url = URL(string: posterURL){
+            self.posterURL = url
+        }
     }
-    
     // detect mime type from path extension
     // mimes are extracted from : https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/StreamingMediaGuide/DeployingHTTPLiveStreaming/DeployingHTTPLiveStreaming.html
     fileprivate func mimeTypeFromPath(path: String)->String{
@@ -37,4 +36,24 @@ class videoListItem {
         }
         return "application/x-mpegURL"
     }
+}
+
+
+class featureListItem {
+    var videoItem: videoListItem!
+    var config: [playerFeaturesType]!
+    init(videoListItem: videoListItem, config: [playerFeaturesType]) {
+        self.videoItem = videoListItem
+        self.config = config
+    }
+}
+
+
+
+enum playerFeaturesType {
+    case PIP
+    case VR
+    case POSTER_IMAGE
+    case PRE_ROL_AD
+    case SKIPPABLE_AD
 }

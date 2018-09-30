@@ -33,7 +33,6 @@ class PageViewController: RotationLockedPageViewController, UIPageViewController
         self.delegate = self
         self.dataSource = self
         setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
-        self.view.backgroundColor = UIColor.flatColor.navyBlue.accent1 // set background color to hide scroll left and right
         
         // remove Swipe Gesture for PageViewController
         removeSwipeGesture()

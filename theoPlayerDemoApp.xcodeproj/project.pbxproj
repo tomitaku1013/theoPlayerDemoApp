@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801CA9882160F0BD0001F427 /* features_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 801CA9872160F0BD0001F427 /* features_list.json */; };
 		806D2679215D35B80034C2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D2678215D35B80034C2CE /* AppDelegate.swift */; };
 		806D267B215D35B80034C2CE /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D267A215D35B80034C2CE /* PageViewController.swift */; };
 		806D267E215D35B80034C2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 806D267C215D35B80034C2CE /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		801CA9872160F0BD0001F427 /* features_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = features_list.json; sourceTree = "<group>"; };
 		806D2675215D35B80034C2CE /* theoPlayerDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theoPlayerDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806D2678215D35B80034C2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		806D267A215D35B80034C2CE /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				806D26B4215D8B090034C2CE /* videos_list.json */,
+				801CA9872160F0BD0001F427 /* features_list.json */,
 			);
 			path = Datasets;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801CA9882160F0BD0001F427 /* features_list.json in Resources */,
 				806D2686215D35BA0034C2CE /* LaunchScreen.storyboard in Resources */,
 				806D26B5215D8B090034C2CE /* videos_list.json in Resources */,
 				806D2683215D35BA0034C2CE /* Assets.xcassets in Resources */,

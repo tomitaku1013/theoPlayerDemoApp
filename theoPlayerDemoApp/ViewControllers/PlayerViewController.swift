@@ -15,11 +15,13 @@ class PlayerViewController: UIViewController{
     
     var videoItem: videoListItem!
     var videoPlayer: THEOplayer!
-    
+    var videoPlayerFeatures: [playerFeaturesType] = []
     
     // UI Elements
     @IBOutlet weak var videoPlayerContainer: UIView!
     @IBOutlet weak var videoPlayerHeightConstraint: NSLayoutConstraint! // used to update the player height when video height is ready
+    @IBOutlet weak var navBarOutlet: UINavigationBar!
+    
     
     
     // var to be used in the swipedown effect
@@ -28,6 +30,9 @@ class PlayerViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.flatColor.navyBlue.accent1
+        self.navBarOutlet.topItem?.title = videoItem.title
         
         // setup theoPlayer
         attachTheoPlayer(parentView: self.videoPlayerContainer)
@@ -82,6 +87,9 @@ class PlayerViewController: UIViewController{
     }
     
     
+    @IBAction func didPressClose(_ sender: Any) {
+        self.closeView(animated:true)
+    }
     
     
     override func viewDidLayoutSubviews() {
@@ -103,23 +111,14 @@ class PlayerViewController: UIViewController{
 extension PlayerViewController {
     
     func attachTheoPlayer(parentView: UIView){
-        videoPlayer = THEOplayer()
         
-        // add playerSource
-        let src = TypedSource(src: videoItem.path, type: videoItem.mimeType)
-        videoPlayer.source = SourceDescription(source: src)
-        
+        // init videoPlayer
+        videoPlayer = theoPlayerWithConfigs(configs: [.SKIPPABLE_AD,.PIP])
         
         // attach event Listeners
         let _ = videoPlayer.addEventListener(type: PlayerEventTypes.PLAYING) { (eP) in
             self.PLAYING()
         }
-        
-        
-        //Video Player Config
-        videoPlayer.autoplay = true
-        videoPlayer.fullscreenOrientationCoupling = true
-        
         
         videoPlayer.addAsSubview(of: parentView)
     }
@@ -136,14 +135,69 @@ extension PlayerViewController {
     func PLAYING(){
         // Update videoPlayer and its container to the optimized Height
         videoPlayer.requestOptimisedHeightForWidth(width: self.view.frame.width) { (newHeight) in
-            self.videoPlayerHeightConstraint.constant = newHeight
-            self.videoPlayer.frame.size.height = newHeight
+            if newHeight.isFinite {
+                self.videoPlayerHeightConstraint.constant = newHeight
+                self.videoPlayer.frame.size.height = newHeight
+            }
         }
     }
     
     
     
-    
+    //MARK - PLayer Features Activation
+    func theoPlayerWithConfigs(configs:[playerFeaturesType])->THEOplayer{
+        
+        var adsDescription = [GoogleImaAdDescription]()
+        var PIP = false
+        var PRE_ROL_AD = false
+        var SKIPPABLE_AD = false
+        var posterSource: URL? = 
+        // loop through the configs and active the required config
+        for cfg in configs {
+            switch cfg {
+            case .PIP:
+                // set picture-in-picture to be true
+                PIP = true
+                break
+            case .PRE_ROL_AD:
+                // activate pre-roll ad and set its IMA ad description
+                PRE_ROL_AD = true
+                adsDescription.append(GoogleImaAdDescription(src: GoogleImaAdDescription.googleSamples.PRE_ROL_AD))
+                break
+            case .SKIPPABLE_AD:
+                // activate skippable ad and set its IMA ad description
+                SKIPPABLE_AD = true
+                adsDescription.append(GoogleImaAdDescription(src: GoogleImaAdDescription.googleSamples.SKIPPABLE_AD))
+                break
+            default:
+                break
+            }
+        }
+        
+        // set the stream source and the parsed config
+        let streamSource = TypedSource(src: videoItem.path, type: videoItem.mimeType)
+        let sourceDescription =  SourceDescription(source: streamSource, ads: adsDescription)
+        if let imgSrc = posterSource {
+            sourceDescription.poster = imgSrc
+            videoPlayer.autoplay = false // set autoplay to false to give the player time to load the poster
+        }else{
+            videoPlayer.autoplay = true
+        }
+        let config = THEOplayerConfiguration(googleIMA: (PRE_ROL_AD || SKIPPABLE_AD), pictureInPicture: PIP, ads: AdsConfiguration(showCountdown: true, preload: .MIDROLL_AND_POSTROLL))
+        let player = THEOplayer(configuration: config)
+        player.source = sourceDescription
+        player.fullscreenOrientationCoupling = true
+        return player
+    }
 }
 
 
+
+
+
+extension GoogleImaAdDescription {
+    struct googleSamples {
+        static let PRE_ROL_AD = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=vmap&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ar%3Dpreonly&cmsid=496&vid=short_onecue&correlator="
+        static let SKIPPABLE_AD = "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&correlator="
+    }
+}

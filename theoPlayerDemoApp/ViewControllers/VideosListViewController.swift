@@ -22,17 +22,12 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         // prepare tableViewOutlet UI
         prepareTableView()
         
         
     }
-    
-    
-    
-    
     
     //MARK - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,13 +85,12 @@ extension VideosListViewController {
                 if let jsonResult = jsonResult as? Array<Dictionary<String, String>> {
                     for item in jsonResult {
                         guard let title = item["title"],
-                        let path = item["path"],
-                        let duration = item["duration"] else {
+                        let path = item["path"] else{
                             print("error in parsing data from Json File videos_list")
                             return dataset
                         }
                         
-                        let videoItem = videoListItem(title: title, path: path, duration: duration)
+                        let videoItem = videoListItem(title: title, path: path)
                         dataset.append(videoItem)
                     }
                 }

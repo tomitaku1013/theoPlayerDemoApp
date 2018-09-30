@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //customise navigationbar colors attr
         UINavigationBar.appearance().barTintColor = UIColor.flatColor.navyBlue.accent1
+        UINavigationBar.appearance().tintColor = UIColor.flatColor.yellow.accent1
         UISegmentedControl.appearance().backgroundColor = UIColor.flatColor.navyBlue.accent2
         
         
