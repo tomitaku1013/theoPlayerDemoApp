@@ -13,3 +13,7 @@ import UIKit
 class RotationLockedPageViewController: UIPageViewController {
     
 }
+
+class RotationLockedViewController: UIViewController {
+    
+}

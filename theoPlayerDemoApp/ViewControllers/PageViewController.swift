@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class PageViewController: RotationLockedPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     // declaring viewController that will be used in the pageViewController
@@ -24,20 +25,14 @@ class PageViewController: RotationLockedPageViewController, UIPageViewController
         }
     }
     
-    // UI elements
-    var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // setup segmented control When view did load
-        preparSegmentedControl()
 
         // assigning delegate and datasource to the viewController
         self.delegate = self
         self.dataSource = self
         setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
-        
         
     }
     
@@ -69,37 +64,18 @@ class PageViewController: RotationLockedPageViewController, UIPageViewController
         return subViewControllers[VcIndex + 1]
     }
     
-    
-    
-    //MARK - UIPageViewControllerDelegate
-    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        let VcIndex: Int = subViewControllers.lastIndex(of: pendingViewControllers[0]) ?? 0
-        segmentedControl.selectedSegmentIndex = VcIndex
-    }
-    
 }
 
 
 extension PageViewController {
     
-    func preparSegmentedControl(){
-        segmentedControl = UISegmentedControl(items: ["Videos", "Features"])
-        segmentedControl.frame.size = CGSize(width: self.view.frame.width, height: segmentedControl.frame.size.height)
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.tintColor = UIColor.flatColor.yellow.accent1
-        segmentedControl.addTarget(self, action: #selector(self.didChangeSegmentedControlValue(sender:)), for: .valueChanged)
-        self.navigationItem.titleView = segmentedControl
-    }
-    
-    @objc func didChangeSegmentedControlValue(sender: UISegmentedControl){
-        // detecting the transition direction (forward/reverse) and then set active VC for PageViewController
-        let segmentedValue = sender.selectedSegmentIndex
+    //MARK - signal from ParentVC that the segmentedControl Changed
+    func didChangeSegmentedControlValue(segmentedValue: Int){
         var direction = UIPageViewController.NavigationDirection.forward
         if(segmentedValue < self.currentPageIndex){
             direction = UIPageViewController.NavigationDirection.reverse
         }
         setViewControllers([subViewControllers[segmentedValue]], direction: direction, animated: true, completion: nil)
     }
-    
     
 }

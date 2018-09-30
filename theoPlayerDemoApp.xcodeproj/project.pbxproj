@@ -22,8 +22,9 @@
 		806D26B2215D786F0034C2CE /* FeaturesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */; };
 		806D26B5215D8B090034C2CE /* videos_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 806D26B4215D8B090034C2CE /* videos_list.json */; };
 		806D26B8215D94CD0034C2CE /* ClassModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D26B7215D94CD0034C2CE /* ClassModels.swift */; };
+		80A278402160406300A837C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A2783F2160406300A837C6 /* MainViewController.swift */; };
 		80B145E7215F8DE800397FF9 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B145E6215F8DE800397FF9 /* PlayerViewController.swift */; };
-		80B145E9215F90E700397FF9 /* RotationLockedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B145E8215F90E700397FF9 /* RotationLockedPageViewController.swift */; };
+		80B145E9215F90E700397FF9 /* RotationLockClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B145E8215F90E700397FF9 /* RotationLockClasses.swift */; };
 		80B50A12215FF3A8009E5D4B /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B50A11215FF3A8009E5D4B /* VideoInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +80,9 @@
 		806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesListViewController.swift; sourceTree = "<group>"; };
 		806D26B4215D8B090034C2CE /* videos_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videos_list.json; sourceTree = "<group>"; };
 		806D26B7215D94CD0034C2CE /* ClassModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModels.swift; sourceTree = "<group>"; };
+		80A2783F2160406300A837C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		80B145E6215F8DE800397FF9 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		80B145E8215F90E700397FF9 /* RotationLockedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationLockedPageViewController.swift; sourceTree = "<group>"; };
+		80B145E8215F90E700397FF9 /* RotationLockClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationLockClasses.swift; sourceTree = "<group>"; };
 		80B50A11215FF3A8009E5D4B /* VideoInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +140,7 @@
 				806D26B3215D838E0034C2CE /* ViewControllers */,
 				806D26AD215D6C3F0034C2CE /* extensions.swift */,
 				806D26B7215D94CD0034C2CE /* ClassModels.swift */,
-				80B145E8215F90E700397FF9 /* RotationLockedPageViewController.swift */,
+				80B145E8215F90E700397FF9 /* RotationLockClasses.swift */,
 				806D267C215D35B80034C2CE /* Main.storyboard */,
 				806D2682215D35BA0034C2CE /* Assets.xcassets */,
 				806D2684215D35BA0034C2CE /* LaunchScreen.storyboard */,
@@ -170,6 +172,7 @@
 		806D26B3215D838E0034C2CE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				80A2783F2160406300A837C6 /* MainViewController.swift */,
 				806D267A215D35B80034C2CE /* PageViewController.swift */,
 				806D26AF215D785B0034C2CE /* VideosListViewController.swift */,
 				806D26B1215D786F0034C2CE /* FeaturesListViewController.swift */,
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				806D2681215D35B80034C2CE /* theoPlayerDemoApp.xcdatamodeld in Sources */,
+				80A278402160406300A837C6 /* MainViewController.swift in Sources */,
 				80B145E7215F8DE800397FF9 /* PlayerViewController.swift in Sources */,
 				806D267B215D35B80034C2CE /* PageViewController.swift in Sources */,
 				806D2679215D35B80034C2CE /* AppDelegate.swift in Sources */,
@@ -329,7 +333,7 @@
 				806D26B8215D94CD0034C2CE /* ClassModels.swift in Sources */,
 				806D26AE215D6C3F0034C2CE /* extensions.swift in Sources */,
 				80B50A12215FF3A8009E5D4B /* VideoInfoViewController.swift in Sources */,
-				80B145E9215F90E700397FF9 /* RotationLockedPageViewController.swift in Sources */,
+				80B145E9215F90E700397FF9 /* RotationLockClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

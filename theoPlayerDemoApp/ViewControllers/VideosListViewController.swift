@@ -43,6 +43,12 @@ class VideosListViewController: UIViewController, UITableViewDataSource, UITable
         let data = tableViewDataSet[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "tCell")! as UITableViewCell
         cell.textLabel?.text = data.title
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.flatColor.navyBlue.accent1
+        }else{
+            cell.backgroundColor = UIColor.flatColor.navyBlue.accent2
+        }
+        cell.textLabel?.textColor = UIColor.flatColor.yellow.accent1
         return cell
     }
     

@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import THEOplayerSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,8 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // enable screenRotation for views That Conform to the RotatableViewController
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         if let rootViewController = self.topViewControllerWithRootViewController(rootViewController: window?.rootViewController) {
-            if rootViewController.isKind(of: RotationLockedPageViewController.self){
+            if rootViewController.isKind(of: RotationLockedPageViewController.self) || rootViewController.isKind(of: RotationLockedViewController.self){
                 // allow portrait only orientation
+                
                 return .portrait
             }
         }

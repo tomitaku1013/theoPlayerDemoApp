@@ -111,8 +111,8 @@ extension PlayerViewController {
         
         
         // attach event Listeners
-        let _ = videoPlayer.addEventListener(type: PlayerEventTypes.LOADED_DATA) { (eP) in
-            self.LOADED_DATA()
+        let _ = videoPlayer.addEventListener(type: PlayerEventTypes.PLAYING) { (eP) in
+            self.PLAYING()
         }
         
         
@@ -133,7 +133,7 @@ extension PlayerViewController {
     
     
     //MARK - TheoPlayer Events
-    func LOADED_DATA(){
+    func PLAYING(){
         // Update videoPlayer and its container to the optimized Height
         videoPlayer.requestOptimisedHeightForWidth(width: self.view.frame.width) { (newHeight) in
             self.videoPlayerHeightConstraint.constant = newHeight
