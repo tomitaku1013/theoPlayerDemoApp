@@ -29,11 +29,14 @@ class PageViewController: RotationLockedPageViewController, UIPageViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // assigning delegate and datasource to the viewController
+        // Setup PageViewController
         self.delegate = self
         self.dataSource = self
         setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
+        self.view.backgroundColor = UIColor.flatColor.navyBlue.accent1 // set background color to hide scroll left and right
         
+        // remove Swipe Gesture for PageViewController
+        removeSwipeGesture()
     }
     
     
@@ -77,5 +80,16 @@ extension PageViewController {
         }
         setViewControllers([subViewControllers[segmentedValue]], direction: direction, animated: true, completion: nil)
     }
+    
+    
+    // workarround to remove the Swipe Gesture of the PageViewController
+    func removeSwipeGesture(){
+        for view in self.view.subviews {
+            if let subView = view as? UIScrollView {
+                subView.isScrollEnabled = false
+            }
+        }
+    }
+    
     
 }

@@ -44,7 +44,7 @@ class MainViewController: RotationLockedViewController {
         segmentedControl.frame.size = CGSize(width: self.view.frame.width, height: segmentedControl.frame.size.height)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.tintColor = UIColor.flatColor.yellow.accent1
-        segmentedControl.frame.size = CGSize(width: self.view.frame.width + 10, height: self.view.frame.height * 0.1) // added + 10 to the width as a workarround to hide borders
+        segmentedControl.frame.size = CGSize(width: self.view.frame.width + 10, height: self.view.frame.height * 0.05) // added + 10 to the width as a workarround to hide borders
         segmentedControl.center = segmentedControlContainer.center
         segmentedControl.addTarget(self, action: #selector(self.didChangeSegmentedControlValue(sender:)), for: .valueChanged)
         self.segmentedControlContainer.addSubview(segmentedControl)
