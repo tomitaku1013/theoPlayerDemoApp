@@ -17,12 +17,6 @@
         "posterPath":""
     },
     {
-        "title": "Stream with 360/VR feature enabled",
-        "path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8",
-        "config": [],
-        "posterPath":""
-    },
-    {
         "title": "Stream with a poster image",
         "path": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
         "config": [],
