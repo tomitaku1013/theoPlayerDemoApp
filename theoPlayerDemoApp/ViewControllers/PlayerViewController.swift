@@ -113,7 +113,7 @@ extension PlayerViewController {
     func attachTheoPlayer(parentView: UIView){
         
         // init videoPlayer
-        videoPlayer = theoPlayerWithConfigs(configs: [.PRE_ROL_AD])
+        videoPlayer = theoPlayerWithConfigs(configs: videoPlayerFeatures)
         
         // attach event Listeners
         let _ = videoPlayer.addEventListener(type: PlayerEventTypes.PLAYING) { (eP) in
@@ -151,7 +151,7 @@ extension PlayerViewController {
         var PIP = false
         var PRE_ROL_AD = false
         var SKIPPABLE_AD = false
-        var posterSource: URL?
+        let posterSource: URL? = videoItem.posterURL
         // loop through the configs and active the required config
         for cfg in configs {
             switch cfg {
