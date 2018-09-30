@@ -41,19 +41,24 @@ class videoListItem {
 
 class featureListItem {
     var videoItem: videoListItem!
-    var config: [playerFeaturesType]!
-    init(videoListItem: videoListItem, config: [playerFeaturesType]) {
+    var config = [playerFeaturesType]()
+    init(videoListItem: videoListItem, configs: [String]) {
         self.videoItem = videoListItem
-        self.config = config
+        for cfg in configs {
+            self.config.append(playerFeaturesType.init(fromRawValue: cfg))
+        }
     }
 }
 
 
 
-enum playerFeaturesType {
-    case PIP
-    case VR
-    case POSTER_IMAGE
-    case PRE_ROL_AD
-    case SKIPPABLE_AD
+enum playerFeaturesType: String {
+    case PIP = "PIP"
+    case POSTER_IMAGE = "POSTER_IMAGE"
+    case PRE_ROL_AD = "PRE_ROL_AD"
+    case SKIPPABLE_AD = "SKIPPABLE_AD"
+    case NONE = "NONE" // default value
+    init(fromRawValue: String){
+        self = playerFeaturesType(rawValue: fromRawValue) ?? .NONE
+    }
 }

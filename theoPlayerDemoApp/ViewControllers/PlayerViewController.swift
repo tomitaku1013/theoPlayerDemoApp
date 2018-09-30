@@ -113,7 +113,7 @@ extension PlayerViewController {
     func attachTheoPlayer(parentView: UIView){
         
         // init videoPlayer
-        videoPlayer = theoPlayerWithConfigs(configs: [.SKIPPABLE_AD,.PIP])
+        videoPlayer = theoPlayerWithConfigs(configs: [.PRE_ROL_AD])
         
         // attach event Listeners
         let _ = videoPlayer.addEventListener(type: PlayerEventTypes.PLAYING) { (eP) in
@@ -151,7 +151,7 @@ extension PlayerViewController {
         var PIP = false
         var PRE_ROL_AD = false
         var SKIPPABLE_AD = false
-        var posterSource: URL? = 
+        var posterSource: URL?
         // loop through the configs and active the required config
         for cfg in configs {
             switch cfg {
@@ -179,9 +179,6 @@ extension PlayerViewController {
         let sourceDescription =  SourceDescription(source: streamSource, ads: adsDescription)
         if let imgSrc = posterSource {
             sourceDescription.poster = imgSrc
-            videoPlayer.autoplay = false // set autoplay to false to give the player time to load the poster
-        }else{
-            videoPlayer.autoplay = true
         }
         let config = THEOplayerConfiguration(googleIMA: (PRE_ROL_AD || SKIPPABLE_AD), pictureInPicture: PIP, ads: AdsConfiguration(showCountdown: true, preload: .MIDROLL_AND_POSTROLL))
         let player = THEOplayer(configuration: config)

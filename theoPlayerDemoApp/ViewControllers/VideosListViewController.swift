@@ -85,12 +85,12 @@ extension VideosListViewController {
                 if let jsonResult = jsonResult as? Array<Dictionary<String, String>> {
                     for item in jsonResult {
                         guard let title = item["title"],
-                        let path = item["path"] else{
+                        let path = item["path"],
+                        let posterPath = item["posterPath"] else{
                             print("error in parsing data from Json File videos_list")
                             return dataset
                         }
-                        
-                        let videoItem = videoListItem(title: title, path: path)
+                        let videoItem = videoListItem(title: title, path: path, posterURL: posterPath)
                         dataset.append(videoItem)
                     }
                 }
