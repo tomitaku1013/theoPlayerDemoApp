@@ -177,13 +177,15 @@ extension PlayerViewController {
         // set the stream source and the parsed config
         let streamSource = TypedSource(src: videoItem.path, type: videoItem.mimeType)
         let sourceDescription =  SourceDescription(source: streamSource, ads: adsDescription)
-        if let imgSrc = posterSource {
-            sourceDescription.poster = imgSrc
-        }
+        sourceDescription.poster = posterSource
         let config = THEOplayerConfiguration(googleIMA: (PRE_ROL_AD || SKIPPABLE_AD), pictureInPicture: PIP, ads: AdsConfiguration(showCountdown: true, preload: .MIDROLL_AND_POSTROLL))
         let player = THEOplayer(configuration: config)
         player.source = sourceDescription
         player.fullscreenOrientationCoupling = true
+        if sourceDescription.poster == nil {
+            // autoplay video if no poster found
+            player.autoplay = true
+        }
         return player
     }
 }

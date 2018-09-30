@@ -1,4 +1,4 @@
-# theoPlayerDemoApp
+# TheoPlayerDemoApp
 > TheoPlayer iOS SDK integration.
 
 [![Swift Version][swift-image]][swift-url]

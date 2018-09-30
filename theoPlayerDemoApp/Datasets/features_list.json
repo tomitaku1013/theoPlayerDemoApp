@@ -12,25 +12,25 @@
     },
     {
         "title": "Stream with picture-in-picture feature enabled",
-        "path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8",
+        "path": "https://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8",
         "config": ["PIP"],
         "posterPath":""
     },
     {
         "title": "Stream with a poster image",
-        "path": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "path": "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
         "config": [],
-        "posterPath":"https://static8.depositphotos.com/1020341/896/i/950/depositphotos_8969502-stock-photo-human-face-with-cracked-texture.jpg"
+        "posterPath":"https://i.ytimg.com/vi/R6MlUcmOul8/maxresdefault.jpg"
     },
     {
         "title": "Stream with a pre-roll advertisement",
-        "path": "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8",
+        "path": "https://content.jwplatform.com/manifests/yp34SRmf.m3u8",
         "config": ["PRE_ROL_AD"],
         "posterPath":""
     },
     {
         "title": "Stream with a skippable advertisement",
-        "path": "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8",
+        "path": "https://content.jwplatform.com/manifests/yp34SRmf.m3u8",
         "config": ["SKIPPABLE_AD"],
         "posterPath":""
     }

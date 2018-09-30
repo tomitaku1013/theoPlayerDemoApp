@@ -1,16 +1,17 @@
-[{
-		"title": "HLS stream",
-		"path": "https://cdn.theoplayer.com/video/sintel/index.m3u8",
+[
+    {
+		"title": "Big buck bunny",
+		"path": "https://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4",
         "posterPath":""
 	},
 	{
-		"title": "HLS stream with multiple subtitles and audio tracks",
-        "path": "https://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8",
+		"title": "Wildlife sample video by Microsoft",
+        "path": "https://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8",
         "posterPath":""
     },
     {
-        "title": "HLS stream with 360/VR",
-        "path": "https://demo.theoplayer.com/hubfs/videos/natgeo/playlist.m3u8",
+        "title": "Tears of Steel",
+        "path": "https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
         "posterPath":""
     },
     {
@@ -19,12 +20,12 @@
         "posterPath":""
     },
     {
-        "title": "sintel HLS test",
-        "path": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+        "title": "Elephants dream",
+        "path": "https://cdn.theoplayer.com/video/elephants-dream/playlist.m3u8",
         "posterPath":""
     },
     {
-        "title": "telequebec.tv",
+        "title": "Tele-Quebec.tv",
         "path": "https://mnmedias.api.telequebec.tv/m3u8/29880.m3u8",
         "posterPath":""
     }
